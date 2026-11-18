@@ -1,0 +1,201 @@
+/* =========================================
+CARECONNECT - SIDEBAR
+========================================= */
+
+.cc-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background: linear-gradient(180deg, #033E4B, #022F3A);
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
+    overflow-y: auto;
+}
+
+/* BRAND */
+
+.sidebar-brand {
+    padding: 30px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.sidebar-brand h4 {
+    font-size: 25px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.sidebar-brand span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #A9C7CE;
+}
+
+/* MENU */
+
+.sidebar-menu {
+    padding: 25px 15px;
+    flex: 1;
+}
+
+.sidebar-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #91B2BB;
+    padding: 0 12px;
+    margin-bottom: 18px;
+}
+
+/* NAVIGATION LINKS */
+
+.cc-sidebar .sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 15px;
+    margin-bottom: 8px;
+    border-radius: 9px;
+    text-decoration: none;
+    color: #D2E2E6;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+.cc-sidebar .sidebar-link span {
+    font-size: 19px;
+    width: 22px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* HOVER */
+
+.cc-sidebar .sidebar-link:hover {
+    background: rgba(255, 255, 255, 0.10);
+    color: #FFFFFF;
+    transform: translateX(3px);
+}
+
+/* ACTIVE LINK */
+
+.cc-sidebar .sidebar-link.active {
+    background: #FFFFFF;
+    color: #033E4B;
+    font-weight: 700;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* FOOTER */
+
+.sidebar-footer {
+    padding: 20px 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.cc-sidebar .logout-link:hover {
+    background: #B83232;
+    color: #FFFFFF;
+}
+
+/* =========================================
+SIDEBAR PAGE LAYOUT
+========================================= */
+
+@media (min-width: 769px) {
+
+
+    .row:has(> .col-md-2 .cc-sidebar) {
+        display: block;
+    }
+
+    .row:has(> .col-md-2 .cc-sidebar)>.col-md-2 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 260px;
+        height: 100vh;
+        padding: 0 !important;
+        z-index: 1000;
+    }
+
+    .row:has(> .col-md-2 .cc-sidebar)>.col-md-10 {
+        width: calc(100% - 260px);
+        margin-left: 260px;
+        padding: 35px 40px !important;
+        min-height: 100vh;
+    }
+
+
+}
+
+/* =========================================
+RESPONSIVE SIDEBAR
+========================================= */
+
+@media (max-width: 768px) {
+
+
+    .cc-sidebar {
+        width: 70px;
+    }
+
+    .sidebar-brand {
+        padding: 25px 5px;
+        text-align: center;
+    }
+
+    .sidebar-brand h4 {
+        font-size: 0;
+    }
+
+    .sidebar-brand h4::first-letter {
+        font-size: 23px;
+    }
+
+    .sidebar-brand span {
+        display: none;
+    }
+
+    .sidebar-menu {
+        padding: 20px 8px;
+    }
+
+    .cc-sidebar .sidebar-link {
+        justify-content: center;
+        padding: 13px 5px;
+        font-size: 0;
+    }
+
+    .cc-sidebar .sidebar-link span {
+        font-size: 20px;
+    }
+
+    .sidebar-label {
+        display: none;
+    }
+
+    .sidebar-footer {
+        padding: 15px 8px;
+    }
+
+    .row:has(> .col-md-2 .cc-sidebar)>.col-md-2 {
+        width: 70px;
+    }
+
+    .row:has(> .col-md-2 .cc-sidebar)>.col-md-10 {
+        width: calc(100% - 70px);
+        margin-left: 70px;
+        padding: 22px 16px !important;
+    }
+
+
+}

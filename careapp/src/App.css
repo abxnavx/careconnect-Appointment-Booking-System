@@ -1,0 +1,673 @@
+/* ==========================================================================
+   CareConnect - Complete Custom App.css
+   Tailored 100% to your exact React components & Bootstrap 4 DOM structure
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --cc-dark: #033742;
+  --cc-primary: #044F5F;
+  --cc-secondary: #0A7489;
+  --cc-accent: #14B8A6;
+  --cc-badge-bg: #E0F2F1;
+  --cc-input-bg: #EEF3F8;
+  --cc-input-border: #D8E2EE;
+  --cc-bg: #F3F6FA;
+  --cc-white: #FFFFFF;
+  --cc-text: #0F172A;
+  --cc-muted: #64748B;
+  --cc-border: #E2E8F0;
+  --cc-shadow-sm: 0 4px 16px rgba(4, 79, 95, 0.06);
+  --cc-shadow-md: 0 14px 34px rgba(4, 79, 95, 0.10);
+  --cc-shadow-lg: 0 24px 48px rgba(4, 79, 95, 0.15);
+  --cc-radius: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   1. Global Reset & Smooth Animations
+   -------------------------------------------------------------------------- */
+@keyframes ccFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  background-color: var(--cc-bg) !important;
+  color: var(--cc-text) !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --------------------------------------------------------------------------
+   2. Eliminate Duplicate Blue Header.js & Style Navigation.js as One Sleek Bar
+   -------------------------------------------------------------------------- */
+/* Hides the redundant <header className="bg-primary text-white"> from Header.js */
+header.bg-primary {
+  display: none !important;
+}
+
+/* Styles Navigation.js (<nav className="navbar navbar-expand-lg navbar-light bg-light">) */
+nav.navbar.navbar-light.bg-light {
+  background: linear-gradient(135deg, var(--cc-dark) 0%, var(--cc-primary) 100%) !important;
+  padding: 0.9rem 0 !important;
+  box-shadow: 0 6px 24px rgba(3, 55, 66, 0.18) !important;
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+  border: none !important;
+}
+
+nav.navbar .container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+/* CareConnect Brand Logo with Medical Pulse Icon */
+nav.navbar .navbar-brand {
+  color: #FFFFFF !important;
+  font-size: 1.45rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+nav.navbar .navbar-brand::before {
+  content: "✚";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2DD4BF 0%, #14B8A6 100%);
+  color: var(--cc-dark);
+  font-size: 0.95rem;
+  font-weight: 900;
+  box-shadow: 0 0 14px rgba(45, 212, 191, 0.45);
+}
+
+/* Push nav links to the right side cleanly */
+nav.navbar .navbar-nav {
+  margin-left: auto !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+}
+
+nav.navbar .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-weight: 600 !important;
+  font-size: 0.94rem !important;
+  padding: 0.5rem 1.05rem !important;
+  border-radius: 999px !important;
+  transition: all 0.22s ease !important;
+  text-decoration: none !important;
+}
+
+nav.navbar .navbar-nav .nav-link:hover {
+  color: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  transform: translateY(-1px);
+}
+
+/* Style the Logout button inside Navigation.js */
+nav.navbar .navbar-nav button.btn-link.nav-link {
+  background: rgba(239, 68, 68, 0.18) !important;
+  color: #FECACA !important;
+  border: 1px solid rgba(254, 202, 202, 0.3) !important;
+  margin-left: 0.35rem !important;
+}
+
+nav.navbar .navbar-nav button.btn-link.nav-link:hover {
+  background: #EF4444 !important;
+  color: #FFFFFF !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. Home.js (.jumbotron) - Modern Healthcare Hero Banner
+   -------------------------------------------------------------------------- */
+.jumbotron {
+  margin-top: 2.5rem !important;
+  background:
+    radial-gradient(circle at 92% 20%, rgba(45, 212, 191, 0.16) 0%, transparent 35%),
+    radial-gradient(circle at 85% 85%, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.06) 28%, transparent 29%),
+    linear-gradient(135deg, var(--cc-dark) 0%, var(--cc-primary) 55%, var(--cc-secondary) 100%) !important;
+  border-radius: 24px !important;
+  padding: 4.25rem 4rem !important;
+  color: #FFFFFF !important;
+  box-shadow: var(--cc-shadow-lg) !important;
+  position: relative;
+  overflow: hidden;
+  border: none !important;
+  animation: ccFadeUp 0.5s ease-out both;
+}
+
+.jumbotron::before {
+  content: "PATIENT CARE PORTAL";
+  display: inline-block;
+  background: rgba(45, 212, 191, 0.18);
+  color: #5EEAD4;
+  border: 1px solid rgba(94, 234, 212, 0.3);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.38rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1.15rem;
+}
+
+.jumbotron h1.display-4 {
+  color: #FFFFFF !important;
+  font-size: 2.85rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.jumbotron p.lead {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 1.18rem !important;
+  font-weight: 400 !important;
+  max-width: 540px;
+}
+
+.jumbotron hr.my-4 {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  margin: 1.75rem 0 !important;
+  max-width: 480px;
+}
+
+.jumbotron p {
+  color: rgba(255, 255, 255, 0.82) !important;
+  font-size: 1rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Crisp White "View Doctors" CTA Button inside Hero */
+.jumbotron .btn.btn-primary {
+  background: #FFFFFF !important;
+  color: var(--cc-primary) !important;
+  font-weight: 700 !important;
+  font-size: 0.98rem !important;
+  padding: 0.8rem 1.85rem !important;
+  border-radius: 12px !important;
+  border: none !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.25s ease !important;
+}
+
+.jumbotron .btn.btn-primary::after {
+  content: " →";
+  font-weight: 800;
+}
+
+.jumbotron .btn.btn-primary:hover {
+  background: #2DD4BF !important;
+  color: var(--cc-dark) !important;
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   4. Login.js (col-md-5) - Exact Admin Portal Split Card Design!
+   -------------------------------------------------------------------------- */
+.row.justify-content-center {
+  margin-top: 2.5rem !important;
+  margin-bottom: 3rem !important;
+  animation: ccFadeUp 0.45s ease-out both;
+}
+
+/* Specifically targets Login.js which uses <div className="col-md-5"> */
+.row.justify-content-center>.col-md-5 {
+  flex: 0 0 880px !important;
+  max-width: 880px !important;
+  background: var(--cc-white) !important;
+  border-radius: 22px !important;
+  box-shadow: var(--cc-shadow-lg) !important;
+  padding: 3.5rem 3.5rem 3.5rem 410px !important;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--cc-border);
+  min-height: 490px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Left Dark Teal Branding Panel on Login Page (Matches Admin Portal Reference!) */
+.row.justify-content-center>.col-md-5::before {
+  content: "CareConnect\A\AHealthcare Management Made Simple\A\AManage appointments, doctors, and personal health records from one secure portal.";
+  white-space: pre-wrap;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 365px;
+  background:
+    radial-gradient(circle at 105% 75%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 36%, transparent 37%),
+    radial-gradient(circle at 105% 75%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 22%, transparent 23%),
+    linear-gradient(160deg, var(--cc-dark) 0%, var(--cc-primary) 70%, var(--cc-secondary) 100%);
+  color: #FFFFFF;
+  padding: 3rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+/* "PATIENT PORTAL" Pill Badge above Login H2 */
+.row.justify-content-center>.col-md-5>h2.mb-4::before {
+  content: "PATIENT PORTAL";
+  display: block;
+  width: fit-content;
+  background: var(--cc-badge-bg);
+  color: var(--cc-primary);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.row.justify-content-center>.col-md-5>h2.mb-4::after {
+  content: "Sign in to access your appointment dashboard.";
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--cc-muted);
+  margin-top: 0.35rem;
+  letter-spacing: 0;
+}
+
+/* --------------------------------------------------------------------------
+   5. Register.js (col-md-7), BookAppointment.js & ChangePassword.js (col-md-6)
+   -------------------------------------------------------------------------- */
+.row.justify-content-center>.col-md-6,
+.row.justify-content-center>.col-md-7 {
+  background: var(--cc-white) !important;
+  padding: 2.75rem 3rem !important;
+  border-radius: 22px !important;
+  box-shadow: var(--cc-shadow-md) !important;
+  border: 1px solid var(--cc-border) !important;
+  border-top: 6px solid var(--cc-primary) !important;
+}
+
+.row.justify-content-center h2.mb-4 {
+  color: var(--cc-text) !important;
+  font-weight: 800 !important;
+  font-size: 1.85rem !important;
+  letter-spacing: -0.025em !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. Universal Form Controls & Buttons (Matches Admin Portal Soft Inputs)
+   -------------------------------------------------------------------------- */
+.form-group {
+  margin-bottom: 1.2rem !important;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  color: #1E293B !important;
+  margin-bottom: 0.4rem !important;
+}
+
+.form-control {
+  background-color: var(--cc-input-bg) !important;
+  border: 1.5px solid var(--cc-input-border) !important;
+  border-radius: 10px !important;
+  padding: 0.72rem 1rem !important;
+  height: auto !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  color: var(--cc-text) !important;
+  transition: all 0.2s ease !important;
+  box-shadow: none !important;
+}
+
+.form-control:focus {
+  background-color: #FFFFFF !important;
+  border-color: var(--cc-primary) !important;
+  box-shadow: 0 0 0 4px rgba(4, 79, 95, 0.13) !important;
+  outline: none !important;
+}
+
+/* Full-width Submit Button inside all Forms */
+form button.btn.btn-primary {
+  width: 100% !important;
+  background-color: var(--cc-primary) !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  font-size: 0.96rem !important;
+  padding: 0.85rem 1.5rem !important;
+  border-radius: 10px !important;
+  border: none !important;
+  margin-top: 0.65rem !important;
+  box-shadow: 0 6px 18px rgba(4, 79, 95, 0.22) !important;
+  transition: all 0.22s ease !important;
+}
+
+form button.btn.btn-primary::after {
+  content: " →";
+  font-weight: 700;
+}
+
+form button.btn.btn-primary:hover {
+  background-color: var(--cc-dark) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(4, 79, 95, 0.3) !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. DoctorList.js & DoctorCard.js (.card.h-100)
+   -------------------------------------------------------------------------- */
+h2.mb-4 {
+  color: var(--cc-primary) !important;
+  font-weight: 800 !important;
+  font-size: 2rem !important;
+  letter-spacing: -0.025em !important;
+  margin-top: 1.75rem !important;
+}
+
+.card.h-100 {
+  background: var(--cc-white) !important;
+  border: 1px solid var(--cc-border) !important;
+  border-top: 5px solid var(--cc-primary) !important;
+  border-radius: var(--cc-radius) !important;
+  box-shadow: var(--cc-shadow-sm) !important;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.card.h-100:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--cc-shadow-md) !important;
+}
+
+.card.h-100 .card-body {
+  padding: 1.75rem !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.card.h-100 .card-title {
+  color: var(--cc-primary) !important;
+  font-size: 1.35rem !important;
+  font-weight: 800 !important;
+  text-transform: capitalize;
+  margin-bottom: 0.5rem !important;
+}
+
+/* First card-text in DoctorCard.js is Specialization - make it a sleek teal pill */
+.card.h-100 .card-body>p.card-text:nth-of-type(1) {
+  display: inline-block;
+  width: fit-content;
+  background: var(--cc-badge-bg);
+  color: var(--cc-primary);
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  margin-bottom: 0.9rem !important;
+}
+
+.card.h-100 .card-text {
+  color: var(--cc-muted) !important;
+  font-size: 0.95rem !important;
+  margin-bottom: 0.45rem !important;
+  text-transform: capitalize;
+}
+
+.card.h-100 .btn.btn-primary {
+  margin-top: auto !important;
+  padding-top: 0.65rem !important;
+  padding-bottom: 0.65rem !important;
+  background-color: var(--cc-primary) !important;
+  border: none !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  width: 100%;
+}
+
+.card.h-100 .btn.btn-primary:hover {
+  background-color: var(--cc-dark) !important;
+}
+
+/* --------------------------------------------------------------------------
+   8. DoctorDetails.js (Targets the exact bare <div><h2>...<p><strong>... structure)
+   -------------------------------------------------------------------------- */
+div:has(> h2 + p > strong) {
+  max-width: 620px;
+  margin: 2.75rem auto !important;
+  background: var(--cc-white);
+  padding: 2.75rem 3rem;
+  border-radius: 22px;
+  box-shadow: var(--cc-shadow-md);
+  border: 1px solid var(--cc-border);
+  border-top: 6px solid var(--cc-primary);
+  animation: ccFadeUp 0.45s ease-out both;
+}
+
+div:has(> h2 + p > strong)::before {
+  content: "VERIFIED DOCTOR PROFILE";
+  display: inline-block;
+  background: var(--cc-badge-bg);
+  color: var(--cc-primary);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.8rem;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+div:has(> h2 + p > strong)>h2 {
+  color: var(--cc-text) !important;
+  font-size: 2.1rem !important;
+  font-weight: 800 !important;
+  text-transform: capitalize;
+  margin-bottom: 1.5rem !important;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--cc-border);
+}
+
+div:has(> h2 + p > strong)>p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--cc-input-bg);
+  padding: 0.95rem 1.25rem;
+  border-radius: 12px;
+  margin-bottom: 0.75rem !important;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cc-text);
+  text-transform: capitalize;
+  border-left: 4px solid var(--cc-primary);
+}
+
+div:has(> h2 + p > strong)>p>strong {
+  color: var(--cc-muted);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   9. Appointments.js (.card.mb-3)
+   -------------------------------------------------------------------------- */
+h4.mb-3 {
+  color: var(--cc-text) !important;
+  font-weight: 700 !important;
+  font-size: 1.25rem !important;
+  margin-top: 1.75rem !important;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--cc-border);
+}
+
+.card.mb-3 {
+  background: var(--cc-white) !important;
+  border: 1px solid var(--cc-border) !important;
+  border-left: 5px solid var(--cc-primary) !important;
+  border-radius: 14px !important;
+  box-shadow: var(--cc-shadow-sm) !important;
+  transition: all 0.2s ease !important;
+}
+
+.card.mb-3:hover {
+  transform: translateX(4px);
+  box-shadow: var(--cc-shadow-md) !important;
+}
+
+.card.mb-3 .card-body {
+  padding: 1.35rem 1.75rem !important;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card.mb-3 .card-body h5 {
+  color: var(--cc-primary) !important;
+  font-weight: 800 !important;
+  font-size: 1.2rem !important;
+  text-transform: capitalize;
+  margin: 0 !important;
+  min-width: 180px;
+}
+
+.card.mb-3 .card-body p {
+  margin: 0 !important;
+  color: var(--cc-muted) !important;
+  font-weight: 600 !important;
+  font-size: 0.94rem !important;
+  background: var(--cc-input-bg);
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+}
+
+.card.mb-3 .btn.btn-danger {
+  background-color: #FEE2E2 !important;
+  color: #991B1B !important;
+  border: 1px solid #FECACA !important;
+  font-weight: 700 !important;
+  border-radius: 9px !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.card.mb-3 .btn.btn-danger:hover {
+  background-color: #EF4444 !important;
+  color: #FFFFFF !important;
+}
+
+/* --------------------------------------------------------------------------
+   10. Alerts & Footer.js (footer.bg-light.mt-5)
+   -------------------------------------------------------------------------- */
+.alert {
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  font-size: 0.92rem !important;
+  padding: 0.9rem 1.15rem !important;
+}
+
+.alert-success {
+  background-color: #D8EFE3 !important;
+  color: #14532D !important;
+  border: 1px solid #B7E2CA !important;
+}
+
+.alert-danger {
+  background-color: #FEE2E2 !important;
+  color: #991B1B !important;
+  border: 1px solid #FECACA !important;
+}
+
+footer.bg-light.mt-5 {
+  margin-top: auto !important;
+  background: var(--cc-dark) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  border-top: none !important;
+}
+
+footer.bg-light.mt-5 p {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+footer.bg-light.mt-5 p::after {
+  content: " — Secure Healthcare Management Portal © 2026";
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+/* --------------------------------------------------------------------------
+   11. Responsive Mobile & Tablet Support
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .row.justify-content-center>.col-md-5 {
+    flex: 0 0 94% !important;
+    max-width: 94% !important;
+    padding: 15rem 2rem 2.5rem 2rem !important;
+  }
+
+  .row.justify-content-center>.col-md-5::before {
+    width: 100%;
+    height: 12.5rem;
+    bottom: auto;
+    padding: 1.75rem;
+    font-size: 1.1rem;
+  }
+
+  .jumbotron {
+    padding: 2.5rem 2rem !important;
+  }
+
+  .jumbotron h1.display-4 {
+    font-size: 2.1rem !important;
+  }
+
+  nav.navbar .container {
+    flex-direction: column !important;
+    gap: 0.75rem;
+  }
+
+  nav.navbar .navbar-nav {
+    margin-left: 0 !important;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

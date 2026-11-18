@@ -1,0 +1,195 @@
+css
+/* ===== General Page Styling ===== */
+
+body {
+    background: #F5F8FA;
+    color: #263238;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Main content area */
+.container-fluid .col-md-10.p-4 {
+    padding: 32px !important;
+    min-height: 100vh;
+}
+
+/* ===== Headings ===== */
+
+h2 {
+    color: #044F5F;
+    font-size: 27px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* ===== Cards and Forms ===== */
+
+form {
+    background: #FFFFFF;
+    padding: 30px;
+    border: 1px solid #DCE5E9;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(28, 55, 70, 0.05);
+    max-width: 950px;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #34454D;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    border: 1px solid #DCE5E9;
+    border-radius: 8px;
+    padding: 11px 13px;
+    font-size: 14px;
+    background: #FFFFFF;
+}
+
+.form-control:focus {
+    border-color: #044F5F;
+    box-shadow: 0 0 0 3px rgba(4, 79, 95, 0.12);
+}
+
+.form-check-input {
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: #044F5F;
+    border-color: #044F5F;
+}
+
+.form-check-label {
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+/* ===== Buttons ===== */
+
+.btn {
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 9px 17px;
+    transition: 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #044F5F;
+    border-color: #044F5F;
+}
+
+.btn-primary:hover {
+    background-color: #033E4B;
+    border-color: #033E4B;
+}
+
+.btn-warning {
+    background-color: #FFF3CD;
+    border-color: #FFF3CD;
+    color: #856404;
+}
+
+.btn-warning:hover {
+    background-color: #FFE69C;
+    color: #664D03;
+}
+
+.btn-danger {
+    background-color: #FCE8E8;
+    border-color: #FCE8E8;
+    color: #B42318;
+}
+
+.btn-danger:hover {
+    background-color: #B42318;
+    border-color: #B42318;
+    color: white;
+}
+
+.btn-secondary,
+.btn-outline-secondary {
+    border-radius: 8px;
+}
+
+/* ===== Doctor List Table ===== */
+
+.table {
+    background: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-top: 15px;
+}
+
+.table thead th {
+    background: #EAF1F4;
+    color: #34454D;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 16px;
+    border-bottom: 1px solid #DCE5E9;
+    white-space: nowrap;
+}
+
+.table tbody td {
+    padding: 16px;
+    font-size: 14px;
+    color: #37474F;
+    border-bottom: 1px solid #EDF1F3;
+}
+
+.table tbody tr:hover {
+    background-color: #F5FAFB;
+}
+
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ===== Validation Errors ===== */
+
+.text-danger {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* ===== Responsive Design ===== */
+
+@media (max-width: 768px) {
+
+    .container-fluid .col-md-10.p-4 {
+        padding: 18px !important;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    .table {
+        min-width: 650px;
+    }
+
+}
+
+/* Ensure full-page edit/add forms stack vertically */
+.col-md-10>form.doctor-form {
+    display: block !important;
+    max-width: 950px;
+    margin: 0 auto 0 0;
+}
+
+.doctor-form .mb-3 {
+    width: 100%;
+}
